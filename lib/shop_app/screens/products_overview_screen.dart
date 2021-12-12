@@ -60,6 +60,21 @@ class ProductsOverviewScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('My Shop'),
       ),
+      body: GridView.builder(
+        padding: const EdgeInsets.all(10.0),
+        itemCount: loadedProducts.length,
+        itemBuilder: (context, i) => ProductItem(
+          loadedProducts[i].id,
+          loadedProducts[i].title,
+          loadedProducts[i].imageUrl,
+        ),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          childAspectRatio: 1,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+        ),
+      ),
       // body: GridView.builder(
       //   padding: const EdgeInsets.all(10),
       //   itemCount: loadedProducts.length,
@@ -75,21 +90,6 @@ class ProductsOverviewScreen extends StatelessWidget {
       //     loadedProducts[i].imageUrl,
       //   ),
       // ),
-      body: GridView.builder(
-        padding: const EdgeInsets.all(10.0),
-        itemCount: loadedProducts.length,
-        itemBuilder: (context, i) => ProductItem(
-          loadedProducts[i].id,
-          loadedProducts[i].title,
-          loadedProducts[i].imageUrl,
-        ),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          childAspectRatio: 3 / 2,
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
-        ),
-      ),
     );
   }
 }

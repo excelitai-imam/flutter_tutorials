@@ -14,25 +14,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'My Shop',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.purple)
+            .copyWith(secondary: Colors.deepOrange),
+        fontFamily: 'Lato',
       ),
       home: ProductsOverviewScreen(),
     );
   }
 }
-
-// class MyHomePage extends StatelessWidget {
-//   const MyHomePage({Key? key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: const Text('My Shop'),
-//       ),
-//       body: const Center(
-//         child: Text('Let\'s build a shop!'),
-//       ),
-//     );
-//   }
-// }
